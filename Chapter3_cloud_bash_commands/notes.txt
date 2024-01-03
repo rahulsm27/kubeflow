@@ -1,0 +1,28 @@
+#In a Makefile, a single dollar sign $ is used for variable expansion and function call. It is an integral part of the syntax in mak
+
+
+run-tasks : generate-final-config push
+	$(DOCKER_COMPOSE_EXEC) python src/launch_job_on_gcp.py
+    
+
+# the double dollar sign ($$) is typically used for escaping a literal dollar sign when it needs to be passed to the shell command without being interpreted as a make variable.
+# basically to fetch variables from environment 
+
+push: guard-IMAGE_TAG build
+	@gcloud auth configure-docker --quiet europe-west4-docker.pkg.dev
+	@docker tag "$${DOCKER_IMAGE_NAME}:latest" "$${GCP_DOCKER_REGISTRY_URL}:$${IMAGE_TAG}"
+	@docker push "$${GCP_DOCKER_REGISTRY_URL}:$${IMAGE_TAG}"
+
+
+
+
+#bash
+
+#$variable or ${varaible}: Represents the value stored in the variable.
+
+#$(command) : Executes the command and substitutes its output.
+# current_date=$(date)
+# echo "Current date: $current_date"
+
+
+https://github.com/siddd88/udemy-gcp-serverless-architecture
