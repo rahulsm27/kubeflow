@@ -1,0 +1,74 @@
+Google BigQuery:
+
+Type:
+BigQuery is a fully managed, serverless data warehouse and analytics platform.
+
+Use Case:
+It is designed for running fast and SQL-like queries on large datasets for analytics and business intelligence.
+
+Data Structure:
+BigQuery is schema-on-read, allowing you to run complex queries on semi-structured and nested data.
+
+Query Language:
+Supports SQL-like queries using the BigQuery SQL dialect.
+
+Scalability:
+Automatically scales to handle large datasets and query volumes.
+
+Pricing:
+Based on the amount of data processed by queries.
+
+______________________________________________________
+Google Cloud Bigtable:
+
+Type:
+Bigtable is a fully managed, NoSQL wide-column store database.
+
+Use Case:
+It is designed for real-time and analytical applications that require low-latency access to large amounts of sparse data.
+
+Data Structure:
+Bigtable stores data in tables with rows and columns but is not a relational database. It is schema-less, allowing you to store different types of data in the same table.
+
+Access Pattern:
+Suited for heavy read and write workloads, especially when dealing with large amounts of data.
+
+Scalability:
+Automatically scales horizontally by adding more nodes to the cluster.
+
+Pricing:
+Based on the number of nodes and storage capacity provisioned.
+
+
+---------------------------------------------------
+Google Cloud Storage:
+
+Type:
+Cloud Storage is a fully managed object storage service.
+
+Use Case:
+It is designed for storing and retrieving any amount of data from anywhere on the web. Commonly used for backup, archival, and serving static content.
+
+Data Structure:
+Stores data as objects, with a flat namespace and a folder-like structure.
+
+Access Pattern:
+Suited for scalable and durable storage of files and objects, but not designed for direct querying or complex analytics.
+
+Scalability:
+Automatically scales based on the volume of data and access patterns.
+
+Pricing:
+Based on storage usage, data transfer, and request costs.
+
+Summary:
+BigQuery: Suited for analytics and complex queries on large datasets.
+Bigtable: Suited for real-time, low-latency access to large amounts of sparse data with NoSQL requirements.
+Cloud Storage: Suited for scalable and durable storage of files and objects with simple retrieval requirements.
+
+At a high level, Bigtable is a NoSQL wide-column database. It's optimized for low latency, large numbers of reads and writes, and maintaining performance at scale. Bigtable use cases are of a certain scale or throughput with strict latency requirements, such as IoT, AdTech, FinTech, and so on. If high throughput and low latency at scale are not priorities for you, then another NoSQL database like Firestore might be a better fit.
+Cloud Bigtable is a key-value store that is designed as a sparsely populated table. It can scale to billions of rows and thousands of columns, enabling you to store terabytes or even petabytes of data. This design also helps store large amounts of data per row or per item, making it great for machine learning predictions. It is an ideal data source for MapReduce-style operations and integrates easily with existing big data tools such as Hadoop, Dataflow, and Dataproc. It also supports the open-source HBase API standard to easily integrate with the Apache ecosystem.
+
+
+On the other hand, BigQuery is an enterprise data warehouse for large amounts of relational structured data. It is optimized for large-scale, ad-hoc SQL-based analysis and reporting, which makes it best suited for gaining organizational insights. You can even use BigQuery to analyze data from Cloud Bigtable.
+
