@@ -11,4 +11,6 @@ Chapter 4:
 Cloud run vs Cloud function vs App engine
 Cloud run in details
 CI vs CD
-Cloud build
+Cloud build 
+Github actions
+Cloud build with git
