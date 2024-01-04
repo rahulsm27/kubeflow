@@ -25,4 +25,3 @@ push: guard-IMAGE_TAG build
 # echo "Current date: $current_date"
 
 
-https://github.com/siddd88/udemy-gcp-serverless-architecture
